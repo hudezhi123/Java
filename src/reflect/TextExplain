@@ -1,0 +1,18 @@
+Java SE5内置了三种定义在java.lang中注解：
+  @Override    表示当前的方法将覆盖超类中的方法；
+  @Deprecated    表示当前的方法过时，如果程序员使用了注解为他的元素，那么编译器会警告消息
+  @SuppressWarning  关闭不当的编译器警告信息；
+
+元注解
+  @Target   用来定义注解的作用域的
+  @Retention   用来定义注解在哪一个级别可用（SOURCE：源代码，CLASS：类文件，RUNTIME：运行时）
+  @Document  将此注解包含在JavaDoc中
+  @Inherited  允许子类继承父类中的注解
+
+没有元素的注解被称为，标记注解
+
+// idea 自动引入类的问题：setting->editor->general->Auto import把Exclude from import and completion
+// 框里面的类去掉
+
+泛型会在运行阶段被擦除，这个时候集合一类的对象就可以强制往里面放入非指定泛型的数据
+
