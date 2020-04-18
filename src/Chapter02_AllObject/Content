@@ -27,5 +27,8 @@ BigDecimal   支持任何精度的定点数，例如精确的货币计算
 在作用域里定义的变量只可作用于作用域结束之前
 
 对象的作用域
-Java对象不具备和基本类型一样的生命周期，
+Java对象不具备和基本类型一样的生命周期
+
+public static void main(String[] args){}
+args并未用到，但是Java编译必须这么做，因为args要用来存储命令行参数。
 
