@@ -1,5 +1,6 @@
 package reflect;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
@@ -10,14 +11,35 @@ public class ArrayListTest {
 
     public static void main(String[] args){
         try {
-//            testList();
+            testList();
             testArray();
+            judgeMethod();
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Mark
+    public static void helloWorld(){
+
+    }
+
+    @Mark(name = "pickSame" ,id =1)
+    public static void pickSame(){
+
+    }
+
+    public static void judgeMethod(){
+        Method[] methods = ArrayListTest.class.getDeclaredMethods();
+        for(Method method:methods){
+            Annotation methodAnnotation = method.getAnnotation(Mark.class);
+            if(methodAnnotation!=null){
+                System.out.println(methodAnnotation);
+            }
         }
     }
 
